@@ -49,15 +49,15 @@ export const signup = async (req, res) => {
         profilePic: newUser.profilePic,
       });
 
-      try {
-        await sendWelcomeEmail(
-          newUser.email,
-          newUser.fullName,
-          process.env.CLIENT_URL,
-        );
-      } catch (error) {
-        console.error(error);
-      }
+      // try {
+      //   await sendWelcomeEmail(
+      //     newUser.email,
+      //     newUser.fullName,
+      //     process.env.CLIENT_URL,
+      //   );
+      // } catch (error) {
+      //   console.error(error);
+      // }
     } else {
       res.status(400).json({ message: "Invalid user data" });
     }
