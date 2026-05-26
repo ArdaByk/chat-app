@@ -1,6 +1,7 @@
 import { create } from "zustand";
 import { axiosInstance } from "../lib/axios";
 import toast from "react-hot-toast";
+import { useAuthStore } from "./useAuthStore.js";
 
 export const useChatStore = create((set, get) => ({
   allContacts: [],
@@ -89,7 +90,7 @@ export const useChatStore = create((set, get) => ({
     }
   },
 
-  subscribeToMessage: () => {
+  subscribeToMessages: () => {
     const { selectedUser, isSoundEnabled } = get();
     if (!selectedUser) {
       return;
